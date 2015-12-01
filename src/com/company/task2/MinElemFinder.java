@@ -6,19 +6,21 @@ package com.company.task2;
 public class MinElemFinder {
 
     private double a(int i){
+
         return (double) 1 / ((i + 1)^2);
     }
 
     public int findMin(double eps){
-        double tmp = a(1); // a1 (i = 1)
-        double ai = tmp;
+        double minA = a(1); // a1 (i = 1)
+        double ai;
         int iTmp = 1;
         int i = 2;
-        while(ai < eps){
+
+        while(minA > eps){
             ai = a(i);
-            System.out.println(ai);
-            if(ai > tmp){
-                tmp = ai;
+           // System.out.println(i + "  " + ai);
+            if(ai < minA){
+                minA = ai;
                 iTmp = i;
             }
             i++;

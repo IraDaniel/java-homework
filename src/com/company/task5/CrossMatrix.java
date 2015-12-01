@@ -10,28 +10,13 @@ public class CrossMatrix {
 
     public CrossMatrix(int n) {
         this.n = n;
+
+    }
+
+
+
+    public boolean getCrossMatrix(){
         matrixA = new int [n][n];
-    }
-
-    public int [][] prepareMatrix(){
-        for( int j = 0; j < n; j++){
-            for( int i = 0; i < n; i++){
-                if( i == j){
-                    matrixA[i][j] = 1;
-                }
-                else if( j == ( n - (i + 1))){
-                    matrixA[i][j] = 1;
-                }
-                else{
-                    matrixA[i][j] = 0;
-                }
-
-            }
-        }
-        return matrixA;
-    }
-
-    public int getCrossMatrix(){
         for( int j = 0; j < n; j++){
             for( int i = 0; i < n; i++){
                 if( i == j){
@@ -49,18 +34,8 @@ public class CrossMatrix {
             }
             System.out.print("\n");
         }
-        return 1;
+        return true;
     }
 
-    public int printMatrix(){
-        for( int j = 0; j < n; j++) {
-            for (int i = 0; i < n; i++) {
-                System.out.print(matrixA[i][j]);
-                System.out.print("  ");
-            }
-            System.out.print("\n");
-        }
 
-        return 1;
-    }
 }

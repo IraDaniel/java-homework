@@ -6,15 +6,18 @@ package com.company.task3;
 public class CalcFunction {
 
 
-    public void calcF(double a, double b, double h){
+    public boolean calcF(double a, double b, double h){
         double x = a;
         int i = 0;
+        if(b < a){
+            return false;
+        }
         while(x < b){
-
             System.out.println(x + "\t" + f(x));
             x += h;
             i++;
         }
+        return true;
 
     }
 
