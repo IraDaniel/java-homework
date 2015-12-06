@@ -14,13 +14,13 @@ public class NotebookTest {
     @Test
     public void testNotebook()throws Exception{
         Notebook notebook = new Notebook(10);
-        assertTrue("Error", notebook.addNote("First note"));
-        assertTrue("Error", notebook.addNote("Second note"));
-        assertTrue("Error", notebook.addNote("3"));
-        assertTrue("Error", notebook.addNote("4"));
+        assertTrue("Error with added", notebook.addNote("First note"));
+        assertTrue("Error with added", notebook.addNote("Second note"));
+        assertTrue("Error with added", notebook.addNote("3"));
+        assertTrue("Error with added", notebook.addNote("4"));
         notebook.showAllNotes();
-        assertTrue("Error", notebook.deleteNote(1));
-        assertTrue("Error", notebook.deleteNote(0));
+        assertTrue("Error removing", notebook.deleteNote(1));
+        assertTrue("Error removing", notebook.deleteNote(0));
         notebook.showAllNotes();
        // assertFalse("Error", notebook.deleteNote(4));
     }
