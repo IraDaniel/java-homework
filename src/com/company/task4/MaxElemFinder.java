@@ -4,34 +4,32 @@ package com.company.task4;
  * Created by Ira on 01.12.2015.
  */
 public class MaxElemFinder {
-    private double []arr;
-    private int n;
+    double []arr;
 
-    public MaxElemFinder(double[] arr) {
-        this.arr = arr;
-    }
-
-
-
-    public double [] prepareMatrix(){
-
-        double []arrB = new double[n];
-        for( int i = 0; i < n; i++){
-            arrB[i] = arr[i] + arr[2*n-i-1];
-        }
-        return arrB;
+    public MaxElemFinder(double []inputArr) {
+        this.arr = inputArr;
 
     }
 
-    public double findMaxElem(){
-        double maxElem = 0.0;
-        double [] arrB =  prepareMatrix();
-        for( int i = 0; i < n; i++){
-            if(arr[i] > maxElem){
-                maxElem = arrB[i];
+    public double findMax(){
+
+
+        int n = arr.length;
+        int j = n-1;
+        int i = 0;
+        double max = arr[i] + arr[j];
+        j--;
+        for( i = 1; i < n/2; i++){
+            if((arr[i] + arr[j]) > max){
+                max = arr[i] + arr[j];
+            }
+            else{
+                j--;
             }
         }
-        return maxElem;
+        return max;
     }
+
+
 }
 

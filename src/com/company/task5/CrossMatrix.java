@@ -8,14 +8,14 @@ public class CrossMatrix {
     private int n; //  ךמכטקוסעגמ סעמכבצמג
     private int [][]matrixA;
 
-    public CrossMatrix(int n) {
-        this.n = n;
-
+    public CrossMatrix() {
     }
 
-
-
-    public boolean getCrossMatrix(){
+    public boolean getCrossMatrix(int size){
+        if( n <= 0){
+            return false;
+        }
+        n = size;
         matrixA = new int [n][n];
         for( int j = 0; j < n; j++){
             for( int i = 0; i < n; i++){

@@ -16,7 +16,12 @@ public class NotebookTest {
         Notebook notebook = new Notebook(10);
         assertTrue("Error", notebook.addNote("First note"));
         assertTrue("Error", notebook.addNote("Second note"));
+        assertTrue("Error", notebook.addNote("3"));
+        assertTrue("Error", notebook.addNote("4"));
         notebook.showAllNotes();
-        assertFalse("Error", notebook.deleteNote(4));
+        assertTrue("Error", notebook.deleteNote(1));
+        assertTrue("Error", notebook.deleteNote(0));
+        notebook.showAllNotes();
+       // assertFalse("Error", notebook.deleteNote(4));
     }
 }

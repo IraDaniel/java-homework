@@ -55,6 +55,32 @@ public class Notebook {
 
 
     }
+    // id записи, которую удаляем
+
+    /**
+     * Копирование записей в новый массив, исключая запись, которую хотим удалить
+     * @param id норме записи, которую удаляем
+     * @return новый массив объектов Note
+     */
+    private Note[] deleteLastNotes(int id){
+        Note [] newNote = new Note[maxSize];
+        int iLast = 0;
+        int iNew = 0;
+        while(iLast < index){
+            if(iLast == id){
+                iLast++;
+                continue;
+            }
+
+            newNote[iNew] = new Note(iNew);
+            newNote[iNew].setId(notes[iLast].getId());
+            newNote[iNew].setNote(notes[iLast].getNote());
+            iLast++;
+            iNew++;
+        }
+        index -= 1;
+        return newNote;
+    }
 
     /**
      * Функция удаляет запись в дневнике
@@ -64,18 +90,13 @@ public class Notebook {
         if(id > index){
             return false;
         }else{
-            this.notes[id].setNote("");
-            this.notes[id].setId(-1);
+            Note [] newNote = deleteLastNotes(id);
+            notes = newNote;
+           // this.notes[id].setNote("");
+           // this.notes[id].setId(-1);
             return true;
         }
 
-
-
-        /*for( int i = 0; i < index ;i++){
-            if(i == id){
-
-            }
-        }*/
     }
 
     /**
