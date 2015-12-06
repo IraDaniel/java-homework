@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class MaxElemFindTest {
     @Test
     public void testGetMaxElem()throws Exception{
-        double [] b = {1,2,3,4,5};
+        double [] b = {1,2,3,4};
         MaxElemFinder maxElemFinder = new MaxElemFinder(b);
         //System.out.println(maxElemFinder.findMax());
         assertEquals(5,maxElemFinder.findMax(),0.1);
